@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Fichiers de ressources">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Option class">
+      <UniqueIdentifier>{7aaca5ed-fc3b-479c-babf-271588d51ecd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Asian Option Classes">
+      <UniqueIdentifier>{0d4167ee-8aa0-4c25-865c-05694e31c1fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="European Digital Option classes">
+      <UniqueIdentifier>{7fe11d34-ad42-45ef-aed5-ef2edfd38d82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="European Vanilla Option Classes">
+      <UniqueIdentifier>{a0261fe2-fd6b-4af8-b5d4-1d776d97207a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pricing Models">
+      <UniqueIdentifier>{5e3e5dd1-5df8-4c12-bf7d-a55a85cb3281}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Additional Class">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="American Option Classes">
+      <UniqueIdentifier>{f00cd6d3-4198-42b8-935d-8937dad72a6e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Option.cpp">
+      <Filter>Option class</Filter>
+    </ClCompile>
+    <ClCompile Include="AmericanCallOption.cpp">
+      <Filter>American Option Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="AmericanOption.cpp">
+      <Filter>American Option Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="AmericanPutOption.cpp">
+      <Filter>American Option Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="AsianCallOption.cpp">
+      <Filter>Asian Option Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="AsianOption.cpp">
+      <Filter>Asian Option Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="AsianPutOption.cpp">
+      <Filter>European Vanilla Option Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="EuropeanVanillaOption.cpp">
+      <Filter>European Vanilla Option Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="CallOption.cpp">
+      <Filter>European Vanilla Option Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="PutOption.cpp">
+      <Filter>European Vanilla Option Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="EuropeanDigitalCallOption.cpp">
+      <Filter>European Digital Option classes</Filter>
+    </ClCompile>
+    <ClCompile Include="EuropeanDigitalOption.cpp">
+      <Filter>European Digital Option classes</Filter>
+    </ClCompile>
+    <ClCompile Include="EuropeanDigitalPutOption.cpp">
+      <Filter>Pricing Models</Filter>
+    </ClCompile>
+    <ClCompile Include="BinaryTree.cpp">
+      <Filter>Pricing Models</Filter>
+    </ClCompile>
+    <ClCompile Include="BlackScholesMCPricer.cpp">
+      <Filter>Pricing Models</Filter>
+    </ClCompile>
+    <ClCompile Include="BlackScholesPricer.cpp">
+      <Filter>Pricing Models</Filter>
+    </ClCompile>
+    <ClCompile Include="CRRPricer.cpp">
+      <Filter>Pricing Models</Filter>
+    </ClCompile>
+    <ClCompile Include="MT.cpp">
+      <Filter>Pricing Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Projet C++ for Finance.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="OptionType.cpp">
+      <Filter>Additional Class</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Option.h">
+      <Filter>Option class</Filter>
+    </ClInclude>
+    <ClInclude Include="AmericanCallOption.h">
+      <Filter>American Option Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="AmericanOption.h">
+      <Filter>American Option Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="AmericanPutOption.h">
+      <Filter>American Option Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="AsianCallOption.h">
+      <Filter>Asian Option Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="AsianOption.h">
+      <Filter>Asian Option Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="AsianPutOption.h">
+      <Filter>Asian Option Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="CallOption.h">
+      <Filter>European Vanilla Option Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="PutOption.h">
+      <Filter>European Vanilla Option Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="EuropeanVanillaOption.h">
+      <Filter>European Vanilla Option Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="BinaryTree.h">
+      <Filter>European Digital Option classes</Filter>
+    </ClInclude>
+    <ClInclude Include="EuropeanDigitalCallOption.h">
+      <Filter>European Digital Option classes</Filter>
+    </ClInclude>
+    <ClInclude Include="EuropeanDigitalOption.h">
+      <Filter>European Digital Option classes</Filter>
+    </ClInclude>
+    <ClInclude Include="EuropeanDigitalPutOption.h">
+      <Filter>European Digital Option classes</Filter>
+    </ClInclude>
+    <ClInclude Include="BlackScholesPricer.h">
+      <Filter>Pricing Models</Filter>
+    </ClInclude>
+    <ClInclude Include="BlackScholesMCPricer.h">
+      <Filter>Pricing Models</Filter>
+    </ClInclude>
+    <ClInclude Include="CRRPricer.h">
+      <Filter>Pricing Models</Filter>
+    </ClInclude>
+    <ClInclude Include="MT.h">
+      <Filter>Pricing Models</Filter>
+    </ClInclude>
+    <ClInclude Include="OptionType.h">
+      <Filter>Additional Class</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
