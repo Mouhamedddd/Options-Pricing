@@ -129,18 +129,18 @@ int main() {
             std::cout << "2. Digital" << std::endl;
             std::cout << "Enter your choice: ";
             std::cin >> choice;
+            std::cout << "Enter underlying price (S): ";
+            std::cin >> S;
+            std::cout << "Enter strike price (K): ";
+            std::cin >> K;
+            std::cout << "Enter risk-free rate (r): ";
+            std::cin >> r;
+            std::cout << "Enter volatility (sigma): ";
+            std::cin >> sigma;
+            std::cout << "Enter time to maturity (T in years): ";
+            std::cin >> T;
             if (choice == 1)
             {
-                std::cout << "Enter underlying price (S): ";
-                std::cin >> S;
-                std::cout << "Enter strike price (K): ";
-                std::cin >> K;
-                std::cout << "Enter risk-free rate (r): ";
-                std::cin >> r;
-                std::cout << "Enter volatility (sigma): ";
-                std::cin >> sigma;
-                std::cout << "Enter time to maturity (T in years): ";
-                std::cin >> T;
                 CallOption callOption(K, T);
                 PutOption putOption(K, T);
                 BlackScholesPricer bsCall(&callOption, S, r, sigma);
@@ -151,16 +151,6 @@ int main() {
             }
             else if (choice == 2)
             {
-                std::cout << "Enter underlying price (S): ";
-                std::cin >> S;
-                std::cout << "Enter strike price (K): ";
-                std::cin >> K;
-                std::cout << "Enter risk-free rate (r): ";
-                std::cin >> r;
-                std::cout << "Enter volatility (sigma): ";
-                std::cin >> sigma;
-                std::cout << "Enter time to maturity (T in years): ";
-                std::cin >> T;
                 EuropeanDigitalCallOption callOption(K, T);
                 EuropeanDigitalPutOption putOption(K, T);
                 BlackScholesPricer bsCall(&callOption, S, r, sigma);
@@ -171,75 +161,39 @@ int main() {
             break;
         }
         case 3: { // Monte Carlo Simulation
+            int simulations;
             std::cout << "\nChoose your Option type" << std::endl;
             std::cout << "1. European Vanilla" << std::endl;
             std::cout << "2. Asian" << std::endl;
             std::cout << "3. Digital" << std::endl;
             std::cout << "Enter your choice: ";
             std::cin >> choice;
+            std::cout << "Enter underlying price (S): ";
+            std::cin >> S;
+            std::cout << "Enter strike price (K): ";
+            std::cin >> K;
+            std::cout << "Enter risk-free rate (r): ";
+            std::cin >> r;
+            std::cout << "Enter volatility (sigma): ";
+            std::cin >> sigma;
+            std::cout << "Enter time to maturity (T in years): ";
+            std::cin >> T;
             if (choice == 1)
             {
-                std::cout << "Enter underlying price (S): ";
-                std::cin >> S;
-                std::cout << "Enter strike price (K): ";
-                std::cin >> K;
-                std::cout << "Enter risk-free rate (r): ";
-                std::cin >> r;
-                std::cout << "Enter volatility (sigma): ";
-                std::cin >> sigma;
-                std::cout << "Enter time to maturity (T in years): ";
-                std::cin >> T;
+                
                 CallOption callOption(K, T);
                 PutOption putOption(K, T);
-                std::cout << "Enter number of steps: ";
-                std::cin >> steps;
-                CRRPricer crrCall(&callOption, steps, S, r, sigma);
-                CRRPricer crrPut(&putOption, steps, S, r, sigma);
-                std::cout << "CRR European Vanilla Call Price: " << crrCall() << std::endl;
-                std::cout << "CRR European Vanilla Put Price: " << crrPut() << std::endl;
+                std::cout << "Enter number of simulations: ";
+                std::cin >> simulations;
+                BlackScholesMCPricer mcCall(&callOption, S, r, sigma);
+                BlackScholesMCPricer mcPut(&putOption, S, r, sigma);
+                std::cout << "Monte Carlo Call Price: " << mcCall() << std::endl;
+                std::cout << "Monte Carlo Put Price: " << mcPut() << std::endl;
 
             }
+            
             else if (choice == 2)
             {
-                std::cout << "Enter underlying price (S): ";
-                std::cin >> S;
-                std::cout << "Enter strike price (K): ";
-                std::cin >> K;
-                std::cout << "Enter risk-free rate (r): ";
-                std::cin >> r;
-                std::cout << "Enter volatility (sigma): ";
-                std::cin >> sigma;
-                std::cout << "Enter time to maturity (T in years): ";
-                std::cin >> T;
-                AmericanCallOption callOption(K, T);
-                AmericanPutOption putOption(K, T);
-                std::cout << "Enter number of steps: ";
-                std::cin >> steps;
-                CRRPricer crrCall(&callOption, steps, S, r, sigma);
-                CRRPricer crrPut(&putOption, steps, S, r, sigma);
-                std::cout << "CRR American Call Price: " << crrCall() << std::endl;
-                std::cout << "CRR American Put Price: " << crrPut() << std::endl;
-            }
-            else if (choice == 3)
-            {
-                std::cout << "Enter underlying price (S): ";
-                std::cin >> S;
-                std::cout << "Enter strike price (K): ";
-                std::cin >> K;
-                std::cout << "Enter risk-free rate (r): ";
-                std::cin >> r;
-                std::cout << "Enter Up value: ";
-                std::cin >> T;
-                EuropeanDigitalCallOption callOption(K, T);
-                EuropeanDigitalPutOption putOption(K, T);
-                std::cout << "Enter number of steps: ";
-                std::cin >> steps;
-                CRRPricer crrCall(&callOption, steps, S, up, down, r);
-                CRRPricer crrPut(&putOption, steps, S, up, down, r);
-                std::cout << "CRR European Digital Call Price: " << crrCall() << std::endl;
-                std::cout << "CRR European Digital Put Price: " << crrPut() << std::endl;
-
-                int simulations;
                 int nsteps;
                 std::vector<double> _timesteps;
                 std::cout << "Enter the number of steps: ";
@@ -258,16 +212,18 @@ int main() {
                 std::cout << "Monte Carlo Call Price: " << mcCall() << std::endl;
                 std::cout << "Monte Carlo Put Price: " << mcPut() << std::endl;
             }
+            else if (choice == 3)
+            {
+                EuropeanDigitalCallOption callOption(K, T);
+                EuropeanDigitalPutOption putOption(K, T);
+                std::cout << "Enter number of simulations: ";
+                std::cin >> simulations;
+                BlackScholesMCPricer mcCall(&callOption, S, r, sigma);
+                BlackScholesMCPricer mcPut(&putOption, S, r, sigma);
+                std::cout << "Monte Carlo Call Price: " << mcCall() << std::endl;
+                std::cout << "Monte Carlo Put Price: " << mcPut() << std::endl;
+            }
 
-
-
-            int simulations;
-            std::cout << "Enter number of simulations: ";
-            std::cin >> simulations;
-            BlackScholesMCPricer mcCall(&callOption, S, r, sigma);
-            BlackScholesMCPricer mcPut(&putOption, S, r, sigma);
-            std::cout << "Monte Carlo Call Price: " << mcCall() << std::endl;
-            std::cout << "Monte Carlo Put Price: " << mcPut() << std::endl;
             break;
         }
         default:
